@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Psiko Panel — My Appointments + Roles + Blog Admin
 
 - HashRouter + Vite (GH Pages uyumlu)
@@ -14,3 +15,6 @@ npm run dev
 npm run build
 ```
 `dist` → `docs`'a kopyalayıp pushlayarak GitHub Pages'te yayınlayabilirsiniz.
+=======
+
+>>>>>>> d90cf0bf650f2ba86c2d98de282ddd70643de167
