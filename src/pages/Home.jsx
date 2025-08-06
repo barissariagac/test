@@ -12,7 +12,7 @@ export default function Home() {
         <h2 className="text-4xl md:text-5xl font-bold text-indigo-800 font-serif mb-2">Merhaba, ben İpek Vesek</h2>
         <p className="text-xl text-indigo-600 italic">Psikolog | Neuroscience MD</p>
         <p className="mt-6 max-w-2xl mx-auto text-gray-600 text-lg">
-          Nörobilim alanında yüksek lisans eğitimimi tamamladım ve psikolojik değerlendirme, terapötik müdahaleler ile gönüllü projelerde kapsamlı bir deneyime sahibim. Yetişkin terapisi, çocuk değerlendirme testleri ve travma sonrası stres bozukluğu (TSSB) tedavisi alanlarında uzmanlaşarak bireylerin psikolojik iyilik halini desteklemeye yönelik çalışmalar yürütmekteyim. Depremzedelere yönelik psikososyal destek projelerinde aktif rol aldım ve özel bir eğitim kurumunda idari sorumluluk üstlenerek yönetim alanında deneyim kazandım. Bilişsel Davranışçı Terapi (BDT) uygulamalarında yetkin olup, psikoterapi, değerlendirme ve kriz yönetimi süreçlerinde etkin bir şekilde çalışmaktayım.
+          Nörobilim alanında yüksek lisans eğitimimi tamamladım ve psikolojik değerlendirme, terapötik müdahaleler ile gönüllü projelerde kapsamlı bir deneyime sahibim...
         </p>
       </section>
 
@@ -37,7 +37,7 @@ export default function Home() {
       <section className="bg-indigo-100 p-8 rounded-lg shadow-md text-center">
         <h3 className="text-3xl font-bold text-indigo-800 mb-4 font-serif">Sizin İçin Buradayım</h3>
         <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-          Zor zamanlarınızda yanınızda olmak, yolculuğunuzda size rehberlik etmek ve potansiyelinizi keşfetmenize yardımcı olmak için hazırım.
+          Zor zamanlarınızda yanınızda olmak...
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <Link to="/appointment" className="flex items-center gap-2 bg-indigo-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-indigo-700 transition-colors transform hover:scale-105 shadow-xl">

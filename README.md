@@ -1,19 +1,16 @@
-# Psiko Panel (İpek Vesek)
+# Psiko Panel — My Appointments + Roles + Blog Admin
 
-Frontend demo (GitHub Pages uyumlu). Rotalar HashRouter ile çalışır.
-Admin panel: localStorage tabanlı sahte backend.
+- HashRouter + Vite (GH Pages uyumlu)
+- User/Admin roller
+- **MyAppointments**: kullanıcı girişinden sonra kendi randevularını görür + yeni randevu oluşturur
+- Account sayfası (ad/telefon/hakkında)
+- Admin Blog yönetimi (CRUD)
+- Randevu: localStorage
 
-## Kurulum
-```bash
+## Komutlar
+```
 npm i
 npm run dev
 npm run build
 ```
-
-`dist` klasörünü GitHub Pages'e deploy edin. Vite `base: './'` ayarlı.
-
-## Admin Giriş (Prototip)
-- Kullanıcı adı: `admin`
-- Şifre: `1234`
-
-> Yayına çıkmadan önce gerçek backend ve auth ekleyin.
+`dist` → `docs`'a kopyalayıp pushlayarak GitHub Pages'te yayınlayabilirsiniz.

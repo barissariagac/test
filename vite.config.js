@@ -1,8 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// GH Pages için güvenli seçim: relative base
+// Node <19 için Web Crypto patch (gerekirse)
+// if (!globalThis.crypto?.getRandomValues) {
+//   const { webcrypto } = await import('node:crypto')
+//   globalThis.crypto = webcrypto
+// }
+
 export default defineConfig({
   plugins: [react()],
-  base: '/test/',
+  base: './',
 })

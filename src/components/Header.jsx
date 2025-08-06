@@ -1,10 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Calendar, BookOpen, User, Shield } from 'lucide-react'
+import { currentUser } from '../utils/auth'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { pathname } = useLocation()
+  const [me, setMe] = useState(null)
+
+  useEffect(()=>{ setMe(currentUser()) },[])
+
+  useEffect(()=>{
+    const h = () => setMe(currentUser())
+    window.addEventListener('auth:change', h)
+    window.addEventListener('storage', h)
+    return () => { window.removeEventListener('auth:change', h); window.removeEventListener('storage', h) }
+  }, [])
+
+  useEffect(()=>{ setMe(currentUser()) }, [pathname])
 
   const NavBtn = ({ to, children, primary }) => (
     <Link
@@ -20,6 +33,17 @@ export default function Header() {
     </Link>
   )
 
+  const AccountLink = () => (
+    me?.role === 'admin'
+      ? <NavBtn to="/admin/dashboard"><Shield size={18}/> Admin</NavBtn>
+      : me
+        ? <NavBtn to="/my"><User size={18}/> Hesabım</NavBtn>
+        : (<>
+            <NavBtn to="/admin"><User size={18}/> Giriş</NavBtn>
+            <NavBtn to="/signup"><User size={18}/> Kayıt Ol</NavBtn>
+          </>)
+  )
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -28,7 +52,7 @@ export default function Header() {
           <NavBtn to="/"><User size={18}/> Ana Sayfa</NavBtn>
           <NavBtn to="/blog"><BookOpen size={18}/> Blog</NavBtn>
           <NavBtn to="/appointment" primary><Calendar size={18}/> Online Randevu</NavBtn>
-          <NavBtn to="/admin"><Shield size={18}/> Admin</NavBtn>
+          <AccountLink />
         </nav>
         <button className="md:hidden text-gray-600" onClick={()=>setIsMenuOpen(!isMenuOpen)}>
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -46,7 +70,7 @@ export default function Header() {
             <NavBtn to="/"><User size={18}/> Ana Sayfa</NavBtn>
             <NavBtn to="/blog"><BookOpen size={18}/> Blog</NavBtn>
             <NavBtn to="/appointment" primary><Calendar size={18}/> Online Randevu</NavBtn>
-            <NavBtn to="/admin"><Shield size={18}/> Admin</NavBtn>
+            <AccountLink />
           </nav>
         </div>
       )}
